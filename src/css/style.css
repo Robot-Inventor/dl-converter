@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --md-sys-color-primary: #007bff;
+    --background-color: white;
+    --text-color: rgb(51, 51, 51, 0.87);
+    --md-sys-color-on-surface: var(--text-color);
+    --md-sys-color-on-surface-variant: var(--text-color);
+    --md-sys-color-on-primary: white;
+    --md-sys-color-outline: var(--text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --md-sys-color-primary: #759fcc;
+        --background-color: #121212;
+        --text-color: rgb(255, 255, 255, 0.87);
+        --md-sys-color-on-surface: var(--text-color);
+        --md-sys-color-on-surface-variant: var(--text-color);
+        --md-sys-color-on-primary: #222;
+        --md-sys-color-outline: var(--text-color);
+    }
+}
+
+html,
+body {
+    font-size: 100%;
+    line-height: normal;
+    font-family: sans-serif;
+    width: 100%;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+body {
+    padding: 1rem;
+}
+
+@media (orientation: landscape) {
+    body {
+        max-width: 40rem;
+        margin: 0 auto;
+    }
+}
+
+p,
+ul {
+    margin: 1.5rem 0;
+}
+
+a {
+    color: var(--md-sys-color-primary);
+}
+
+md-outlined-text-field {
+    width: 100%;
+}
+
+#control-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin: 2rem 0;
+}

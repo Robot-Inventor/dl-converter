@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DLconverter</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <meta
+            name="description"
+            content="DLsiteの表現置き換えをエンコード/デコードするツールです。このツールは非公式であり、DLsite公式とは一切関係ありません。 "
+        />
+    </head>
+    <body>
+        <h1>DLconverter</h1>
+        <p>
+            DLsiteの表現置き換えをエンコード/デコードするツールです。このツールは非公式であり、DLsite公式とは一切関係ありません。
+        </p>
+        <p>
+            また、このツールは教育的なコンテンツであり、現実のいかなる犯罪行為も肯定または支持するものではありません。
+        </p>
+        <ul>
+            <li>
+                ソースコード：<a href="https://github.com/Robot-Inventor/dl-converter" target="_blank" rel="noopener"
+                    >Robot-Inventor/dl-converter</a
+                >
+            </li>
+            <li>
+                何かあれば作者のTwitterまでどうぞ：<a
+                    href="https://twitter.com/keita_roboin"
+                    target="_blank"
+                    rel="noopener"
+                    >Twitter</a
+                >
+            </li>
+        </ul>
+        <md-outlined-text-field type="textarea" label="変換するテキストを入力" rows="2" id="user-input">
+        </md-outlined-text-field>
+        <nav id="control-buttons">
+            <md-outlined-button id="decode-button">元の単語に戻す</md-outlined-button>
+            <md-filled-button id="encode-button">変換</md-filled-button>
+        </nav>
+        <md-outlined-text-field type="textarea" label="結果" rows="2" id="result-text-box" readonly>
+            結果がここに表示されます。
+        </md-outlined-text-field>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
