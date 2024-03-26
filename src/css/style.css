@@ -7,17 +7,20 @@
     color-scheme: light dark;
 
     --md-sys-color-primary: #007bff;
+    --md-sys-color-primary-container: white;
+    --md-sys-color-on-primary: rgb(51, 51, 51, 0.87);
+    --md-sys-color-surface-container-highest: white;
     --background-color: white;
     --text-color: rgb(51, 51, 51, 0.87);
     --md-sys-color-on-surface: var(--text-color);
     --md-sys-color-on-surface-variant: var(--text-color);
-    --md-sys-color-on-primary: white;
     --md-sys-color-outline: var(--text-color);
+    
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --md-sys-color-primary: #759fcc;
+        --md-sys-color-primary: #657280;
         --background-color: #121212;
         --text-color: rgb(255, 255, 255, 0.87);
         --md-sys-color-on-surface: var(--text-color);
@@ -60,6 +63,14 @@ a {
 md-outlined-text-field {
     width: 100%;
 }
+
+.switch-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
 
 #control-buttons {
     display: flex;
