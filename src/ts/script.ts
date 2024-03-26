@@ -27,7 +27,9 @@ if (!resultTextBox) {
 }
 
 const encode = (input: string): string => {
-    const keys = Object.keys(table) as Array<keyof typeof table>;
+    // キーを長い順にソート
+    // 長いものから置換することで、長いもの（例：催眠音声）が誤って短いもの（例：催眠）として置換されることを防ぐ
+    const keys = Object.keys(table).sort((a, b) => b.length - a.length) as Array<keyof typeof table>;
 
     for (const key of keys) {
         const value = table[key];
@@ -42,7 +44,9 @@ const encode = (input: string): string => {
 };
 
 const decode = (input: string): string => {
-    const keys = Object.keys(table) as Array<keyof typeof table>;
+    // キーを長い順にソート
+    // 長いものから置換することで、長いもの（例：催眠音声）が誤って短いもの（例：催眠）として置換されることを防ぐ
+    const keys = Object.keys(table).sort((a, b) => b.length - a.length) as Array<keyof typeof table>;
 
     for (const key of keys) {
         const value = table[key];
