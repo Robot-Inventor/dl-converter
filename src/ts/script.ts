@@ -34,9 +34,7 @@ const encode = (input: string): string => {
         if (typeof value === "string") {
             input = input.replaceAll(key, value);
         } else {
-            value.forEach((v) => {
-                input = input.replaceAll(v, key);
-            });
+            input = input.replaceAll(key, value[0]);
         }
     }
 
