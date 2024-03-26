@@ -1,6 +1,6 @@
 {
   "name": "dl-converter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DLsiteの表現置き換えをエンコード/デコードするツールです。このツールは非公式であり、DLsite公式とは一切関係ありません。",
   "main": "index.js",
   "scripts": {
