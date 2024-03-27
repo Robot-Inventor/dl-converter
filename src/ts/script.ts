@@ -80,8 +80,8 @@ const encode = (input: string): string => {
 const decode = (input: string): string => {
     if (primeSwitch.selected) {
         const inputNumber = parseInt(input, 10);
-        if (isNaN(inputNumber)) {
-            return "整数値を入力してください";
+        if (isNaN(inputNumber) || inputNumber < 1) {
+            return "自然数を入力してください";
         }
         let decodedText = "";
         const keys = Object.keys(primeTable).sort((a, b) => b.length - a.length) as Array<keyof typeof primeTable>;
@@ -100,7 +100,7 @@ const decode = (input: string): string => {
             }
         }
         if (decodedText === "") {
-            decodedText = "健全なカテゴリです";
+            decodedText = "健全なテキストです";
         }
         input = decodedText;
 
@@ -120,7 +120,6 @@ const decode = (input: string): string => {
             }
         }
     }
-
     return input;
 };
 

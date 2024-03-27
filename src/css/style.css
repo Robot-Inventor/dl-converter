@@ -18,15 +18,19 @@
     
 }
 
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --md-sys-color-primary: #657280;
+        --md-sys-color-primary: #759fcc;
         --background-color: #121212;
         --text-color: rgb(255, 255, 255, 0.87);
         --md-sys-color-on-surface: var(--text-color);
         --md-sys-color-on-surface-variant: var(--text-color);
         --md-sys-color-on-primary: #222;
         --md-sys-color-outline: var(--text-color);
+        --md-switch-track-color: var(--background-color);
+        --md-switch-hover-track-color: var(--md-sys-color-on-primary);
+
     }
 }
 
