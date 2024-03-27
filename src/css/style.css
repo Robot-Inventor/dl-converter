@@ -15,9 +15,7 @@
     --md-sys-color-on-surface: var(--text-color);
     --md-sys-color-on-surface-variant: var(--text-color);
     --md-sys-color-outline: var(--text-color);
-    
 }
-
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -30,7 +28,6 @@
         --md-sys-color-outline: var(--text-color);
         --md-switch-track-color: var(--background-color);
         --md-switch-hover-track-color: var(--md-sys-color-on-primary);
-
     }
 }
 
@@ -74,7 +71,6 @@ md-outlined-text-field {
     gap: 1rem;
     margin: 2rem 0;
 }
-
 
 #control-buttons {
     display: flex;
