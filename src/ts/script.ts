@@ -51,15 +51,11 @@ const encode = (input: string): string => {
                         output *= v;
                         input = input.replaceAll(key, v.toString());
                     }
-                }
-                );
+                });
             }
         }
         input = output.toString();
-
-
     } else {
-
         // キーを長い順にソート
         // 長いものから置換することで、長いもの（例：催眠音声）が誤って短いもの（例：催眠）として置換されることを防ぐ
         const keys = Object.keys(slangTable).sort((a, b) => b.length - a.length) as Array<keyof typeof slangTable>;
@@ -103,7 +99,6 @@ const decode = (input: string): string => {
             decodedText = "健全なテキストです";
         }
         input = decodedText;
-
     } else {
         // キーを長い順にソート
         // 長いものから置換することで、長いもの（例：催眠音声）が誤って短いもの（例：催眠）として置換されることを防ぐ
@@ -130,4 +125,3 @@ encodeButton.addEventListener("click", () => {
 decodeButton.addEventListener("click", () => {
     resultTextBox.value = decode(userInput.value);
 });
-
