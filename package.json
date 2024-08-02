@@ -26,6 +26,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@material/web": "^1.4.0"
+    "@material/web": "^2.0.0"
   }
 }
