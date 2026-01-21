@@ -29,15 +29,22 @@
     <md-outlined-text-field type="textarea" label="変換するテキストを入力" rows="2" id="user-input">
     </md-outlined-text-field>
 
-    <label class="switch-container">
-        素数モード
-        <md-switch id="prime-switch">
-        </md-switch>
-    </label>
-    <nav id="control-buttons">
+    <fieldset class="control-group">
+        <label>
+            古い変換リストを使う
+            <md-switch id="old-table-switch">
+            </md-switch>
+        </label>
+        <label>
+            素数モード
+            <md-switch id="prime-switch">
+            </md-switch>
+        </label>
+    </fieldset>
+    <fieldset class="control-group">
         <md-outlined-button id="decode-button">元の単語に戻す</md-outlined-button>
         <md-filled-button id="encode-button">変換</md-filled-button>
-    </nav>
+    </fieldset>
     <md-outlined-text-field type="textarea" label="結果" rows="2" id="result-text-box" readonly>
         結果がここに表示されます。
     </md-outlined-text-field>

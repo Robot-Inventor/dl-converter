@@ -7,11 +7,22 @@ import type { MdOutlinedButton } from "@material/web/button/outlined-button.js";
 import type { MdFilledButton } from "@material/web/button/filled-button.js";
 import type { MdSwitch } from "@material/web/switch/switch.js";
 import slangTable from "../json/table.json";
+import oldSlangTable from "../json/old-table.json";
 import primeTable from "../json/prime-table.json";
 
 const userInput = document.querySelector<MdOutlinedTextField>("#user-input");
 if (!userInput) {
     throw new Error("User input not found");
+}
+
+const oldTableSwitch = document.querySelector<MdSwitch>("#old-table-switch");
+if (!oldTableSwitch) {
+    throw new Error("Old table switch not found");
+}
+
+const primeSwitch = document.querySelector<MdSwitch>("#prime-switch");
+if (!primeSwitch) {
+    throw new Error("Prime switch not found");
 }
 
 const decodeButton = document.querySelector<MdOutlinedButton>("#decode-button");
@@ -27,11 +38,6 @@ if (!encodeButton) {
 const resultTextBox = document.querySelector<MdOutlinedTextField>("#result-text-box");
 if (!resultTextBox) {
     throw new Error("Result text box not found");
-}
-
-const primeSwitch = document.querySelector<MdSwitch>("#prime-switch");
-if (!primeSwitch) {
-    throw new Error("Prime switch not found");
 }
 
 const encode = (input: string): string => {
@@ -59,13 +65,14 @@ const encode = (input: string): string => {
 
 
     } else {
+        const table = oldTableSwitch.selected ? oldSlangTable : slangTable;
 
         // キーを長い順にソート
         // 長いものから置換することで、長いもの（例：催眠音声）が誤って短いもの（例：催眠）として置換されることを防ぐ
-        const keys = Object.keys(slangTable).sort((a, b) => b.length - a.length) as Array<keyof typeof slangTable>;
+        const keys = Object.keys(table).sort((a, b) => b.length - a.length) as Array<keyof typeof slangTable>;
 
         for (const key of keys) {
-            const value = slangTable[key];
+            const value = table[key];
             if (typeof value === "string") {
                 input = input.replaceAll(key, value);
             } else {
@@ -105,12 +112,14 @@ const decode = (input: string): string => {
         input = decodedText;
 
     } else {
+        const table = oldTableSwitch.selected ? oldSlangTable : slangTable;
+
         // キーを長い順にソート
         // 長いものから置換することで、長いもの（例：催眠音声）が誤って短いもの（例：催眠）として置換されることを防ぐ
-        const keys = Object.keys(slangTable).sort((a, b) => b.length - a.length) as Array<keyof typeof slangTable>;
+        const keys = Object.keys(table).sort((a, b) => b.length - a.length) as Array<keyof typeof slangTable>;
 
         for (const key of keys) {
-            const value = slangTable[key];
+            const value = table[key];
             if (typeof value === "string") {
                 input = input.replaceAll(value, key);
             } else {
