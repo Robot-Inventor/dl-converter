@@ -15,9 +15,7 @@
     --md-sys-color-on-surface: var(--text-color);
     --md-sys-color-on-surface-variant: var(--text-color);
     --md-sys-color-outline: var(--text-color);
-    
 }
-
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -30,7 +28,6 @@
         --md-sys-color-outline: var(--text-color);
         --md-switch-track-color: var(--background-color);
         --md-switch-hover-track-color: var(--md-sys-color-on-primary);
-
     }
 }
 
@@ -68,17 +65,18 @@ md-outlined-text-field {
     width: 100%;
 }
 
-.switch-container {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin: 2rem 0;
+md-switch {
+    vertical-align: middle;
 }
 
-
-#control-buttons {
+.control-group {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
     margin: 2rem 0;
+    border: none;
+}
+
+.control-group + .control-group {
+    margin-top: -2rem;
 }
