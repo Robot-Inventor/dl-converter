@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Robot-Inventor/dl-converter#readme",
   "devDependencies": {
-    "copy-webpack-plugin": "^13.0.0",
+    "copy-webpack-plugin": "^14.0.0",
     "ts-loader": "^9.5.1",
     "typescript": "^6.0.0",
     "webpack": "^5.91.0",
